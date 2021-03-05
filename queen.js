@@ -30,7 +30,8 @@ const queenThreat = function(board) {
     }
   }
   // Queens can attack if they are on the same row, column, or have an equal sum of row + col
-  return white[0] === black[0] || white[1] === black[1] || white[0] + white[1] === black[0] + black[1];
+  return white[0] === black[0] || white[1] === black[1] || white[0] + white[1] === black[0] + black[1] ||
+  white[0] - white[1] === black[0] - black[1];
 };
 
 const printBoard = function(board) {
@@ -52,3 +53,9 @@ let blackQueen2 = [5, 7];
 let generatedBoard2 = generateBoard(whiteQueen2, blackQueen2);
 printBoard(generatedBoard2);
 console.log(queenThreat(generatedBoard2));
+
+let whiteQueen3 = [2, 2];
+let blackQueen3 = [3, 3];
+let generatedBoard3 = generateBoard(whiteQueen3, blackQueen3);
+printBoard(generatedBoard3);
+console.log(queenThreat(generatedBoard3));
